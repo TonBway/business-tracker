@@ -98,3 +98,15 @@ docker compose down
 # Stop AND delete all data (irreversible)
 docker compose down -v
 ```
+
+## Frontend image:
+ghcr.io/tonbway/business-tracker-frontend:latest
+
+## Backend image:
+ghcr.io/tonbway/business-tracker-backend:latest
+
+## Application URL:
+http://business.bcool.local
+
+## Ingress IP:
+192.168.88.200

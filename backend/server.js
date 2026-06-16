@@ -26,23 +26,23 @@ db.exec(`
 `);
 
 // Seed sample data if empty
-const count = db.prepare("SELECT COUNT(*) as c FROM transactions").get();
-if (count.c === 0) {
-  const insert = db.prepare("INSERT INTO transactions (id,date,type,category,description,amount) VALUES (?,?,?,?,?,?)");
-  const seed = [
-    ["1","2026-05-02","income","Services","Web design project",4800],
-    ["2","2026-05-10","income","Consulting","Strategy workshop",2200],
-    ["3","2026-05-14","expense","Salaries","May payroll",3100],
-    ["4","2026-05-18","expense","Software","SaaS subscriptions",340],
-    ["5","2026-05-22","income","Sales","Product batch #7",1650],
-    ["6","2026-05-28","expense","Marketing","Social media ads",600],
-    ["7","2026-06-03","income","Consulting","Advisory retainer",3000],
-    ["8","2026-06-07","expense","Rent","Office — June",1200],
-    ["9","2026-06-09","expense","Utilities","Internet & electricity",210],
-    ["10","2026-06-12","income","Services","Maintenance contract",900],
-  ];
-  seed.forEach(row => insert.run(...row));
-}
+// const count = db.prepare("SELECT COUNT(*) as c FROM transactions").get();
+// if (count.c === 0) {
+//   const insert = db.prepare("INSERT INTO transactions (id,date,type,category,description,amount) VALUES (?,?,?,?,?,?)");
+//   const seed = [
+//     ["1","2026-05-02","income","Services","Web design project",4800],
+//     ["2","2026-05-10","income","Consulting","Strategy workshop",2200],
+//     ["3","2026-05-14","expense","Salaries","May payroll",3100],
+//     ["4","2026-05-18","expense","Software","SaaS subscriptions",340],
+//     ["5","2026-05-22","income","Sales","Product batch #7",1650],
+//     ["6","2026-05-28","expense","Marketing","Social media ads",600],
+//     ["7","2026-06-03","income","Consulting","Advisory retainer",3000],
+//     ["8","2026-06-07","expense","Rent","Office — June",1200],
+//     ["9","2026-06-09","expense","Utilities","Internet & electricity",210],
+//     ["10","2026-06-12","income","Services","Maintenance contract",900],
+//   ];
+//   seed.forEach(row => insert.run(...row));
+// }
 
 // GET all transactions (newest first)
 app.get("/api/transactions", (req, res) => {
